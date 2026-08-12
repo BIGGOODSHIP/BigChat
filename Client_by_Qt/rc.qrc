@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/BigChat_mainicon.png</file>
+        <file>res/BigChat.ico</file>
+        <file>style/stylesheet.qss</file>
+    </qresource>
+</RCC>
