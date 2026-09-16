@@ -9,7 +9,9 @@
 #include<iostream>
 #include<QNetworkReply>
 #include<QByteArray>
-
+#include<QJsonObject>
+#include<QDir>
+#include<QSettings>
 /**
  * @brief repolish用来刷新qss
  */
@@ -33,5 +35,7 @@ enum ErrorCodes{
 
 };
 
+
+extern QString gate_url_prefix;
 
 #endif // GLOBAL_H

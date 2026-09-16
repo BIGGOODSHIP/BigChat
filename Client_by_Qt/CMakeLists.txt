@@ -31,6 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         global.cpp
         singleton.h
         httpmgr.h httpmgr.cpp
+        config.ini
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Client_by_Qt APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -78,4 +79,19 @@ install(TARGETS Client_by_Qt
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Client_by_Qt)
+endif()
+
+if(WIN32)
+    # 只在Release构建时执行，和原来 CONFIG(release, debug|release) 保持一致
+    if(CMAKE_BUILD_TYPE STREQUAL "Release")
+        set(SRC_CONFIG "${CMAKE_SOURCE_DIR}/config.ini")
+        set(DST_DIR "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+
+        # POST_BUILD：编译链接完成后执行，等价QMAKE_POST_LINK
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND copy /Y "${SRC_CONFIG}" "${DST_DIR}\\"
+            COMMENT "Copy config.ini to output directory"
+            VERBATIM
+        )
+    endif()
 endif()

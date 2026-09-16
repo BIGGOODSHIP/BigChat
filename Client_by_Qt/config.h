@@ -18,4 +18,5 @@ inline const QString icon_path="res/BigChat.ico";
 
 
 
+
 #endif // CONFIG_H

@@ -29,6 +29,11 @@ void RegisterDialog::on_getcode_clicked()
     bool match=regex.match(email).hasMatch();
     if(match){
         //发送验证码
+        QJsonObject json_obj;
+        json_obj["email"]=email;
+        HttpMgr::GetInstance()->PostHttpReq(QUrl(gate_url_prefix+"/get_varifycode"),json_obj,
+                                            ReqId::ID_GET_VARIFY_CODE,Modules::REGISTERMOD);
+
     }else{
         showTip(tr("邮箱地址不正确"),false);
 
@@ -42,7 +47,7 @@ void RegisterDialog::slot_reg_mod_finish(ReqId id,QString res,ErrorCodes err){
     }
 
     //解析json字符串,res 转化为QbyteArray
-    QJsonDocument jsonDoc=QJsonDocument::fromJson(res,toUtf8());
+    QJsonDocument jsonDoc=QJsonDocument::fromJson(res.toUtf8());
     if(jsonDoc.isNull()){
         showTip(tr("json解析失败"),false);
         return;
