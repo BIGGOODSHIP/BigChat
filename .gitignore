@@ -2,3 +2,32 @@ build/
 .qtcreator/
 *.user
 *.autosave
+
+# ---- Node.js ----
+node_modules/
+
+# ---- Visual Studio ----
+.vs/
+*.suo
+
+# ---- C/C++ / MSVC 编译产物 ----
+x64/
+x86/
+Win32/
+Debug/
+Release/
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.tlog
+*.lastbuildstate
+*.idb
+*.ipch
+*.recipe
+
+# ---- 本地密钥/配置 ----
+VarifyServer/config.json
+
+# ---- 编辑器/工具本地状态 ----
+.claude/
