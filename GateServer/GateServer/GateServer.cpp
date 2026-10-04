@@ -90,7 +90,7 @@ void TestRedis()
 
 int main()
 {
-    TestRedisMgr();
+    //TestRedisMgr();
 	//TestRedis();
 	auto& gCfgMgr = ConfigMgr::GetInstance();
     std::string gate_port_str = gCfgMgr["GateServer"]["Port"];
