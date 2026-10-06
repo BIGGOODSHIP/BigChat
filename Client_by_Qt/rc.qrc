@@ -3,5 +3,9 @@
         <file>res/BigChat_mainicon.png</file>
         <file>res/BigChat.ico</file>
         <file>style/stylesheet.qss</file>
+        <file>res/unvisible_hover.png</file>
+        <file>res/unvisible_normal.png</file>
+        <file>res/visible_hover.png</file>
+        <file>res/visible_normal.png</file>
     </qresource>
 </RCC>
