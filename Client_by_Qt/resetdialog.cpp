@@ -239,5 +239,5 @@ void ResetDialog::on_sure_btn_clicked()
 void ResetDialog::on_cancel_btn_clicked()
 {
 
-    emit switchLogin();
+    emit sigSwitchLogin();
 }

@@ -12,9 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(_login_dlg);
 
     //创建和注册消息连接
-    connect(_login_dlg,&LoginDialog::SwitchRegister,this,&MainWindow::SlotSwitchReg);
+    connect(_login_dlg,&LoginDialog::sigSwitchRegister,this,&MainWindow::SlotSwitchReg);
     //连接登录界面忘记密码信号
-    connect(_login_dlg, &LoginDialog::SwitchReset, this, &MainWindow::SlotSwitchReset);
+    connect(_login_dlg, &LoginDialog::sigSwitchReset, this, &MainWindow::SlotSwitchReset);
 
 }
 
@@ -47,9 +47,9 @@ void MainWindow::SlotSwitchLogin()
     _reg_dlg->hide();
     _login_dlg->show();
     //连接登录界面注册信号
-    connect(_login_dlg, &LoginDialog::SwitchRegister, this, &MainWindow::SlotSwitchReg);
+    connect(_login_dlg, &LoginDialog::sigSwitchRegister, this, &MainWindow::SlotSwitchReg);
     //连接登录界面忘记密码信号
-    connect(_login_dlg, &LoginDialog::SwitchReset, this, &MainWindow::SlotSwitchReset);
+    connect(_login_dlg, &LoginDialog::sigSwitchReset, this, &MainWindow::SlotSwitchReset);
 }
 
 //从重置界面返回登录界面
@@ -63,9 +63,9 @@ void MainWindow::SlotSwitchLogin2()
     _reset_dlg->hide();
     _login_dlg->show();
     //连接登录界面忘记密码信号
-    connect(_login_dlg, &LoginDialog::SwitchReset, this, &MainWindow::SlotSwitchReset);
+    connect(_login_dlg, &LoginDialog::sigSwitchReset, this, &MainWindow::SlotSwitchReset);
     //连接登录界面注册信号
-    connect(_login_dlg, &LoginDialog::SwitchRegister, this, &MainWindow::SlotSwitchReg);
+    connect(_login_dlg, &LoginDialog::sigSwitchRegister, this, &MainWindow::SlotSwitchReg);
 }
 
 void MainWindow::SlotSwitchReset()
@@ -78,5 +78,5 @@ void MainWindow::SlotSwitchReset()
     _login_dlg->hide();
     _reset_dlg->show();
     //注册返回登录信号和槽函数
-    connect(_reset_dlg, &ResetDialog::switchLogin, this, &MainWindow::SlotSwitchLogin2);
+    connect(_reset_dlg, &ResetDialog::sigSwitchLogin, this, &MainWindow::SlotSwitchLogin2);
 }

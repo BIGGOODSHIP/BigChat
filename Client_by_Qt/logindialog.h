@@ -2,6 +2,7 @@
 #define LOGINDIALOG_H
 
 #include <QDialog>
+#include"global.h"
 
 namespace Ui {
 class LoginDialog;
@@ -17,12 +18,23 @@ public:
 
 private:
     Ui::LoginDialog *ui;
+    QMap<ReqId,std::function<void(const QJsonObject&)>> _handlers;
+    QMap<TipErr, QString> _tip_errs;
+    void AddTipErr(TipErr te, QString tips);
+    void DelTipErr(TipErr te);
+    void showTip(QString str,bool b_ok);
+    bool checkUserValid();
+    bool checkPwdValid();
+    void initHttpHandlers();
 public slots:
     void slot_forget_pwd();
+    void slot_login_mod_finish(ReqId id, QString res, ErrorCodes err);
 signals:
-    void SwitchRegister();
-    void SwitchReset();
+    void sigSwitchRegister();
+    void sigSwitchReset();
 
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // LOGINDIALOG_H

@@ -103,7 +103,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="user_edit">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -142,7 +142,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="pass_edit">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -194,6 +194,16 @@
         </widget>
        </item>
       </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="err_tip">
+       <property name="text">
+        <string>错误提示</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer name="verticalSpacer_2">

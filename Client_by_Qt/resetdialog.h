@@ -34,7 +34,7 @@ private:
     void showTip(QString str,bool b_ok);
 
 signals:
-    void switchLogin();
+    void sigSwitchLogin();
 
 public slots:
     void slot_reset_mod_finish(ReqId id, QString res, ErrorCodes err);
