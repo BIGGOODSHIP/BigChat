@@ -12,6 +12,8 @@ using grpc::Status;
 using message::GetVarifyReq;
 using message::GetVarifyRsp;
 using message::VarifyService;
+using message::LoginReq;
+using message::LoginRsp;
 
 class RPConPool {
 public:
