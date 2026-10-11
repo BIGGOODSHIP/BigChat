@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>E:\cppsoft\mysql-connector-c++-26.7.0-winx64-debug\mysql-connector-c++-26.7.0-winx64\include;E:\cppsoft\redis-plus-plus-1.3.15\src;E:\cppsoft\hiredis-1.4.1-src\include;E:\cppsoft\vcpkg\installed\x64-windows\include;E:\cppsoft\jsoncpp;E:\cppsoft\boost_1_92_0\include\boost-1_92;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\cppsoft\vcpkg\installed\x64-windows\debug\bin;E:\cppsoft\mysql-connector-c++-26.7.0-winx64-debug\mysql-connector-c++-26.7.0-winx64\lib64\debug\vs14;E:\cppsoft\hiredis-1.4.1-src\hiredis-1.4.1\build_msvc;E:\cppsoft\redis-plus-plus-1.3.15\build_msvc;E:\cppsoft\vcpkg\installed\x64-windows\debug\lib;E:\cppsoft\jsoncpp\build\lib;E:\cppsoft\boost_1_92_0\lib;E:\cppsoft\mysql-connector-c++-26.7.0-winx64-debug\mysql-connector-c++-26.7.0-winx64\lib64\vs14;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>jsoncpp_static.lib;abseil_dll.lib;absl_borrowed_fixup_buffer.lib;absl_decode_rust_punycode.lib;absl_demangle_rust.lib;absl_flags_commandlineflag.lib;absl_flags_commandlineflag_internal.lib;absl_flags_config.lib;absl_flags_internal.lib;absl_flags_marshalling.lib;absl_flags_parse.lib;absl_flags_private_handle_accessor.lib;absl_flags_program_name.lib;absl_flags_reflection.lib;absl_flags_usage.lib;absl_flags_usage_internal.lib;absl_generic_printer_internal.lib;absl_hashtable_profiler.lib;absl_log_flags.lib;absl_log_internal_structured_proto.lib;absl_poison.lib;absl_profile_builder.lib;absl_random_internal_entropy_pool.lib;absl_tracing_internal.lib;absl_utf8_for_code_point.lib;address_sorting.lib;cares.lib;gpr.lib;grpc++.lib;grpc++_alts.lib;grpc++_error_details.lib;grpc++_reflection.lib;grpc++_unsecure.lib;grpc.lib;grpcpp_channelz.lib;grpc_authorization_provider.lib;grpc_plugin_support.lib;grpc_unsecure.lib;libcrypto.lib;libprotobufd.lib;libprotocd.lib;libssl.lib;libupbd.lib;re2.lib;upb_base_lib.lib;upb_descriptor_lib.lib;upb_hash_lib.lib;upb_json_lib.lib;upb_lex_lib.lib;upb_mem_lib.lib;upb_message_lib.lib;upb_mini_descriptor_lib.lib;upb_mini_table_lib.lib;upb_reflection_lib.lib;upb_textformat_lib.lib;upb_wire_lib.lib;utf8_range.lib;utf8_validity.lib;zd.lib;hiredis.lib;redis++_static.lib;mysqlcppconn.lib;mysqlcppconnx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile />
+    <ClCompile>
+      <AdditionalOptions>/wd4996 %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy $(ProjectDir)config.ini  $(SolutionDir)$(Platform)\$(Configuration)\   /y
+xcopy $(ProjectDir)*.dll   $(SolutionDir)$(Platform)\$(Configuration)\   /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

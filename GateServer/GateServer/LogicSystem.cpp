@@ -1,6 +1,7 @@
 #include "LogicSystem.h"
 #include"HttpConnection.h"
 #include"VarifyGrpcClient.h"
+#include"StatusGrpcClient.h"
 #include"RedisMgr.h"
 #include"MysqlMgr.h"
 
@@ -224,14 +225,14 @@ LogicSystem::LogicSystem() {
         auto reply = StatusGrpcClient::GetInstance()->GetChatServer(userInfo.uid);
         if (reply.error()) {
             std::cout << " grpc get chat server failed, error is " << reply.error() << std::endl;
-            root["error"] = ErrorCodes::RPCGetFailed;
+            root["error"] = ErrorCodes::RPCFailed;
             std::string jsonstr = root.toStyledString();
             beast::ostream(connection->_response.body()) << jsonstr;
             return true;
         }
 
         std::cout << "succeed to load userinfo uid is " << userInfo.uid << std::endl;
-        root["error"] = 0;
+        root["error"] = 0; 
         root["user"] = name;
         root["uid"] = userInfo.uid;
         root["token"] = reply.token();

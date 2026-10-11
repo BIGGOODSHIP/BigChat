@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="StatusServer/StatusServer.vcxproj" Id="12813662-2ad4-4fbb-bb53-66f1e826b76c" />
+</Solution>

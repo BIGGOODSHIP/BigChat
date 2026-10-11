@@ -96,6 +96,7 @@ void LoginDialog::initHttpHandlers()
 
 void LoginDialog::slot_login_mod_finish(ReqId id, QString res, ErrorCodes err)
 {
+    std::cout<<"point\n";
     if(err != ErrorCodes::SUCCESS){
         showTip(tr("网络请求错误"),false);
         return;
@@ -115,7 +116,7 @@ void LoginDialog::slot_login_mod_finish(ReqId id, QString res, ErrorCodes err)
         return;
     }
 
-
+    std::cout<<"point\n";
     //调用对应的逻辑,根据id回调。
     _handlers[id](jsonDoc.object());
 

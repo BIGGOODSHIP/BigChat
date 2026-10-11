@@ -123,6 +123,7 @@ bool MysqlDao::UpdatePwd(const std::string& name, const std::string& newpwd) {
 }
 
 bool MysqlDao::CheckPwd(const std::string& name, const std::string& pwd, UserInfo& userInfo) {
+    //std::cout << "input pwd is" << pwd << std::endl;
     auto con = pool_->getConnection();
     Defer defer([this, &con]() {
         pool_->returnConnection(std::move(con));
@@ -130,9 +131,10 @@ bool MysqlDao::CheckPwd(const std::string& name, const std::string& pwd, UserInf
 
     try {
         if (con == nullptr) {
+            
             return false;
         }
-
+        //std::cout << "flase point!" << std::endl;
         // 准备SQL语句
         std::unique_ptr<sql::PreparedStatement> pstmt(con->con_->prepareStatement("SELECT * FROM user WHERE name = ?"));
         pstmt->setString(1, name); // 将username替换为你要查询的用户名
@@ -149,6 +151,7 @@ bool MysqlDao::CheckPwd(const std::string& name, const std::string& pwd, UserInf
         }
 
         if (pwd != origin_pwd) {
+            //std::cout << "flase point!" << std::endl;
             return false;
         }
         userInfo.name = name;
