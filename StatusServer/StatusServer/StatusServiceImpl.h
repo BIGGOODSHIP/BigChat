@@ -8,6 +8,9 @@ using grpc::Status;
 using message::GetChatServerReq;
 using message::GetChatServerRsp;
 using message::StatusService;
+using message::LoginReq;
+using message::LoginRsp;
+
 
 struct ChatServer {
     std::string host;
@@ -19,6 +22,7 @@ public:
     StatusServiceImpl();
     Status GetChatServer(ServerContext* context, const GetChatServerReq* request,
         GetChatServerRsp* reply) override;
+    Status Login(ServerContext* context, const LoginReq* request, LoginRsp* reply) override;
 
     std::vector<ChatServer> _servers;
     int _server_index;

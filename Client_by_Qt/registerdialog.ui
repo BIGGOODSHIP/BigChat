@@ -498,12 +498,12 @@
   <customwidget>
    <class>ClickedLabel</class>
    <extends>QLabel</extends>
-   <header location="global">clickedlabel.h</header>
+   <header>clickedlabel.h</header>
   </customwidget>
   <customwidget>
    <class>TimerBtn</class>
    <extends>QPushButton</extends>
-   <header location="global">timerbtn.h</header>
+   <header>timerbtn.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

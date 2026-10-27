@@ -7,5 +7,9 @@
         <file>res/unvisible_normal.png</file>
         <file>res/visible_hover.png</file>
         <file>res/visible_normal.png</file>
+        <file>res/add_friend.png</file>
+        <file>res/add_friend_hover.png</file>
+        <file>res/add_friend_normal.png</file>
+        <file>res/addtip.png</file>
     </qresource>
 </RCC>
