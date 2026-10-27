@@ -11,5 +11,8 @@
         <file>res/add_friend_hover.png</file>
         <file>res/add_friend_normal.png</file>
         <file>res/addtip.png</file>
+        <file>res/close_search.png</file>
+        <file>res/close_transparent.png</file>
+        <file>res/search.png</file>
     </qresource>
 </RCC>
