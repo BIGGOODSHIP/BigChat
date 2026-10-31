@@ -44,6 +44,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         listitembase.h listitembase.cpp
         loadingdlg.h loadingdlg.cpp loadingdlg.ui
         chatpage.h chatpage.cpp chatpage.ui
+        chatview.h chatview.cpp chatview.ui
+        chatitembase.h chatitembase.cpp chatitembase.ui
+        bubbleframe.h bubbleframe.cpp bubbleframe.ui
+        textbubble.h textbubble.cpp
+        picturebubble.h picturebubble.cpp
+        messagetextedit.h messagetextedit.cpp
+        statewidget.h statewidget.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Client_by_Qt APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

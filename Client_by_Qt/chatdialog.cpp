@@ -71,7 +71,6 @@ ChatDialog::ChatDialog(QWidget *parent):_mode(ChatUIMode::ChatMode)
     ShowSearch(false);
 
     connect(ui->chat_user_list,&ChatUserList::sig_loading_chat_user,this,&ChatDialog::slot_loading_chat_user);
-
     addChatUserList();
 }
 

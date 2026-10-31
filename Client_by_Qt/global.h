@@ -83,6 +83,24 @@ enum ListItemType{
     APPLY_FRIEND_ITEM, //好友申请
 };
 
+enum class ChatRole
+{
+
+    Self,
+    Other
+};
+
+struct MsgInfo{
+    QString msgFlag;//"text,image,file"
+    QString content;//表示文件和图像的url,文本信息
+    QPixmap pixmap;//文件和图片的缩略图
+};
+
+enum MsgStatus{
+    UN_READ = 0,  //对方未读
+    SEND_FAILED = 1,  //发送失败
+    READED = 2  //对方已读
+};
 
 extern QString gate_url_prefix;
 
